@@ -1,0 +1,344 @@
+---
+
+---
+
+<footer>
+  <section class="contact">
+    <div class="contact-wrapper" id="contact">
+      <div class="contact-info" data-aos="fade-right">
+        <h4>Entre em contato</h4>
+        <div class="contact-info__email">
+          <img src="/icons/icon_message.svg" alt="" /><span
+            >contato@ifrancoengenharia.com.br</span
+          >
+        </div>
+        <div>
+          <img src="/icons/icon_phone.svg" alt="" /><span
+            >(22) 99922 6307 | Isabela Franco</span
+          >
+        </div>
+        <div>
+          <img src="/icons/icon_phone.svg" alt="" /><span
+            >(22) 99873 6275 | Mariane Riedmann</span
+          >
+        </div>
+        <div>
+          <img src="/icons/icon_location.svg" alt="" /><span class="endereco"
+            >R. Franklin Delano Roosevelt, 87, sala 2 Cavaleiros, Macaé, RJ</span
+          >
+        </div>
+      </div>
+      <div class="contact-form" data-aos="fade-left">
+        <img src="/icons/ifranco_LOGO_mini-reverse.svg" alt="" />
+        <span>Fale conosco <br />e faça um orçamento</span>
+        <form action="">
+          <input type="text" name="Nome" placeholder="Nome" required />
+          <input type="email" name="Email" placeholder="Email" required />
+          <input type="tel" name="Telefone" placeholder="Telefone" required />
+          <input type="text" name="Mensagem" placeholder="Mensagem" required />
+          <select
+            class="input-select"
+            name="Como prefere ser contactado?"
+            required
+            aria-label="Tipo de contato"
+          >
+            <option value="" disabled selected
+              >Como prefere ser contactado?</option
+            >
+            <option value="Whatsapp">Whatsapp</option>
+            <option value="Email">Email</option>
+            <option value="Ligacao">Ligação</option>
+          </select>
+          <input class="submit" type="submit" value="Enviar mensagem" />
+        </form>
+      </div>
+    </div>
+  </section>
+  <div class="footer-wrapper">
+    <img
+      class="footer-logo"
+      src="/icons/ifranco_LOGO_footer.svg"
+      alt=""
+      data-aos="fade-up"
+    />
+    <ul class="footer__links__menu" data-aos="fade-down">
+      <li>
+        <a href="https://www.instagram.com/ifranco.engenharia/" target="_blank"
+          ><img src="/icons/icon_instagram.svg" alt="Ícone do instagram" /></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://br.linkedin.com/company/ifranco-engenharia"
+          target="_blank"
+          ><img src="/icons/icon_linkedin.svg" alt="Ícone do linkedin" /></a
+        >
+      </li>
+      <li>
+        <a href="https://wa.me/5522998736275" target="_blank"
+          ><img src="/icons/icon_whatsapp.svg" alt="Ícone do Whatsapp" /></a
+        >
+      </li>
+    </ul>
+    <p>
+      I N R Franco Solucoes em Engenharia LTDA © 2024. Todos os direitos
+      reservados.
+    </p>
+  </div>
+</footer>
+
+<style lang="scss">
+  .contact {
+    background: url(/contact-background.svg);
+    position: relative;
+    font-family: var(--ff-space-grotesk);
+    overflow: hidden;
+
+    .contact-wrapper {
+      max-width: 1640px;
+      margin: 0 auto;
+      padding: 6rem 1rem;
+
+      display: flex;
+      justify-content: space-between;
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+
+        h4 {
+          font-size: 8rem;
+          font-weight: 500;
+          max-width: 10ch;
+          line-height: 1;
+          padding-bottom: 3rem;
+        }
+
+        div {
+          display: flex;
+          gap: 2rem;
+          width: fit-content;
+
+          span {
+            font-size: 1.5rem;
+            max-width: 37ch;
+            letter-spacing: 0.05em;
+            font-family: var(--ff-open-sans);
+          }
+
+          .endereco {
+            font-weight: 500;
+            padding-left: 10px;
+          }
+        }
+      }
+
+      .contact-form {
+        border-radius: 2rem;
+        background-color: #fff;
+        padding: 2.5rem 7rem 7rem 7rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        img {
+          height: 22px;
+          margin-bottom: 1.25rem;
+        }
+
+        span {
+          font-size: var(--fs-mm);
+          color: var(--neutral-color-900);
+          font-weight: 700;
+          letter-spacing: 0.01em;
+          text-align: center;
+          margin-bottom: 2.5rem;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 1.25rem;
+
+          input,
+          select {
+            border: 2px solid var(--neutral-color-300);
+            padding: 1rem 1rem;
+            color: var(--neutral-color-700);
+            min-width: 300px;
+            width: 100%;
+            font-family: var(--ff-open-sans);
+            font-size: 0.875rem;
+          }
+
+          input:focus,
+          select:focus {
+            outline: none;
+            border-color: var(--primary-color-400);
+          }
+
+          input:not(:placeholder-shown) {
+            border-color: var(--secondary-color-400);
+          }
+
+          select:valid {
+            border-color: var(--secondary-color-400);
+          }
+
+          input::placeholder {
+            color: var(--neutral-color-300);
+          }
+
+          input:first-child {
+            background: url(/icons/icon_user-solid.svg) no-repeat 95% center;
+            background-size: 15px;
+          }
+
+          input:nth-child(2) {
+            background: url(/icons/icon_envelope-solid.svg) no-repeat 95% center;
+            background-size: 15px;
+          }
+
+          input:nth-child(3) {
+            background: url(/icons/icon_phone-solid.svg) no-repeat 95% center;
+            background-size: 15px;
+          }
+
+          select {
+            background: url(/icons/icon_chevron-down-solid.svg) no-repeat 95%
+              center;
+            background-size: 15px;
+            appearance: none;
+          }
+
+          .submit {
+            color: #fff;
+            border: none;
+            text-transform: uppercase;
+            font-size: 1rem;
+            padding: 0.75rem 1.25rem;
+            text-align: left;
+            font-family: var(--ff-space-grotesk);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-top: 1.5rem;
+
+            background: url("/icons/icon_arrow-right.svg")
+              var(--primary-color-400) no-repeat 95% center;
+            background-size: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-wrapper {
+    background-color: var(--neutral-color-900);
+    padding: 3rem 1rem 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+
+    .footer-logo {
+      width: 272px;
+      height: 175px;
+    }
+
+    img {
+      padding: 1.5rem 0;
+    }
+
+    .footer__links__menu {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    p {
+      font-family: var(--ff-open-sans);
+      letter-spacing: 0.01em;
+      color: #fcfdfb;
+      text-align: center;
+    }
+  }
+
+  @media only screen and (max-width: 1249px) {
+    .contact {
+      .contact-wrapper {
+        padding: 4rem 1rem;
+
+        .contact-info {
+          gap: 2rem;
+          margin-right: 1rem;
+          align-items: flex-start;
+
+          h4 {
+            font-size: clamp(5.5rem, 5vw, 6.5rem);
+          }
+
+          div {
+            span {
+              font-size: 1.125rem;
+            }
+          }
+        }
+
+        .contact-form {
+          padding: 2.5rem 4rem 4rem 4rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .contact {
+      .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 0 auto;
+        align-items: center;
+
+        .contact-info {
+          align-items: center;
+
+          h4 {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .contact {
+      .contact-wrapper {
+        .contact-info {
+          align-items: center;
+
+          h4 {
+            font-size: 4rem;
+          }
+
+          .contact-info__email {
+            display: none;
+          }
+        }
+
+        .contact-form {
+          padding: 2.5rem 1rem;
+          width: 100%;
+
+          form {
+            input,
+            select {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+</style>

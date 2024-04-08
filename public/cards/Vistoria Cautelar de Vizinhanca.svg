@@ -1,0 +1,16 @@
+<svg width="0" height="0" class="hidden">
+  <symbol id="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 85">
+    <rect id="Rectangle_562" width="14" height="2" transform="translate(4 60.867)" fill="#e84e1b"></rect>
+    <rect id="Rectangle_563" width="14" height="2" transform="translate(4 55.333)" fill="#e84e1b"></rect>
+    <rect id="Rectangle_564" width="14" height="2" transform="translate(4 49.8)" fill="#e84e1b"></rect>
+    <rect id="Rectangle_565" width="14" height="2" transform="translate(4 44.267)" fill="#e84e1b"></rect>
+    <rect id="Rectangle_566" width="14" height="2" transform="translate(4 38.733)" fill="#e84e1b"></rect>
+    <path id="Path_651" d="M10.968,68.548h8.226v13.71H10.968Zm38.387,0h8.226v13.71H49.355ZM8.226,30.163h13.71V32.9H19.194v2.742h8.226V82.258H21.935V65.806H8.226V82.258H2.742V35.645h13.71V32.9H8.226Zm38.387,0h13.71V32.9H57.581v2.742h8.226V82.258H60.323V65.806H46.613V82.258H41.129V35.645h13.71V32.9H46.613ZM10.968,24.677h8.226v2.742H10.968ZM24.677,13.71H43.871v2.742H41.129v2.742h5.484v8.226H43.871V32.9H38.387V82.258H30.161V32.9H24.677V27.419H21.935V19.194H38.387V16.452H24.677ZM63.065,8.226h13.71v2.742H74.032V13.71h8.226V82.258H68.548V79.518H79.516V76.774H68.548V71.29H79.516V68.548H68.548V63.065H79.516V60.323H68.548V54.84H79.516V52.1H68.548V46.613H79.516V43.871H68.548V38.387H79.516V35.645H68.548V32.9H63.065V30.163H79.516V27.419H57.581V13.71H71.29V10.968H63.065ZM34.274,4.564l7.318,6.4H26.955ZM65.806,2.742h8.226V5.485H65.806ZM63.065,0V5.485H60.323v5.483H54.839V27.419H49.355V16.452H46.613V11.716L34.274.92l-12.339,10.8v4.735H19.194v5.484H16.452V13.71H13.71v8.226H8.226v5.484H5.484V32.9H0V85H85V10.968H79.516V5.485H76.774V0Z" fill="#e84e1b"></path>
+    <rect id="Rectangle_567" width="14" height="2" transform="translate(47.333 60.867)" fill="#e84e1b"></rect>
+    <rect id="Rectangle_568" width="14" height="2" transform="translate(47.333 55.333)" fill="#e84e1b"></rect>
+    <rect id="Rectangle_569" width="14" height="2" transform="translate(47.333 49.8)" fill="#e84e1b"></rect>
+    <rect id="Rectangle_570" width="14" height="2" transform="translate(47.333 44.267)" fill="#e84e1b"></rect>
+    <rect id="Rectangle_571" width="14" height="2" transform="translate(47.333 38.733)" fill="#e84e1b"></rect>
+    <rect id="Rectangle_572" width="14" height="2" transform="translate(67 19.367)" fill="#e84e1b"></rect>
+  </symbol>
+</svg>

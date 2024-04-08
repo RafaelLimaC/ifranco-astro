@@ -1,8 +1,10 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import About from "../components/sections/About.astro";
 import Depoimentos from "../components/sections/Depoimentos.astro";
 import Hero from "../components/sections/Hero.astro";
+import Service from "../components/sections/Service.astro";
 import Slider from "../components/sections/Slider.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -10,14 +12,33 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
   <div class="wrapper">
     <Header />
-    <Hero />
-    <About />
-    <div class="gradient__wrapper">
-      <div class="gradient"></div>
-      <Slider />
-      <Depoimentos />
-    </div>
+    <main>
+      <Hero />
+      <About />
+      <div class="gradient__wrapper">
+        <div class="gradient"></div>
+        <Slider />
+        <Depoimentos />
+        <Service />
+      </div>
+      <div class="float__icons" data-aos="fade-up">
+        <div class="float__icons-content">
+          <button onclick="topFunction()" id="topBtn" aria-label="Back to top">
+            <img src="/icons/icon_chevron-up-solid.svg" alt="" />
+          </button>
+          <button
+            ><a href="https://wa.me/5522998736275" target="_blank"
+              ><img
+                src="/icons/icon_whatsapp-reverse.svg"
+                alt="Ícone do Whatsapp"
+              /></a
+            ></button
+          >
+        </div>
+      </div>
+    </main>
   </div>
+  <Footer />
 </Layout>
 
 <style lang="scss">
@@ -26,7 +47,6 @@ import Layout from "../layouts/Layout.astro";
     background-position: center top;
     background-size: cover;
     width: 100%;
-    padding: 0 1rem;
   }
 
   .gradient__wrapper {
@@ -34,10 +54,10 @@ import Layout from "../layouts/Layout.astro";
 
     .gradient {
       position: absolute;
-      width: calc(100% + 2rem);
+      width: 100%;
       height: 100%;
       top: 0;
-      left: -1rem;
+      left: 0;
       background: linear-gradient(
         0deg,
         #000000 0%,
@@ -46,9 +66,78 @@ import Layout from "../layouts/Layout.astro";
     }
   }
 
+  .float__icons {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    z-index: 2;
+
+    .float__icons-content {
+      display: flex;
+      gap: 1rem;
+
+      button {
+        width: 5.5rem;
+        height: 5.5rem;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0px 3px 6px #00000033;
+      }
+
+      button:first-child {
+        background-color: var(--primary-color-400);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s;
+      }
+
+      button:last-child {
+        background-color: #32d951;
+
+        img {
+          width: 79px;
+          height: 79px;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+
   @media only screen and (max-width: 1249px) {
     .gradient-wrapper {
       margin-top: 3rem;
     }
   }
+
+  @media only screen and (max-width: 900px) {
+    .float__icons {
+      display: none;
+    }
+  }
 </style>
+
+<script>
+  const topBtn = document.getElementById("topBtn");
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 200 ||
+      document.documentElement.scrollTop > 200
+    ) {
+      topBtn.style.opacity = "1";
+      topBtn.style.pointerEvents = "auto";
+    } else {
+      topBtn.style.opacity = "0";
+      topBtn.style.pointerEvents = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+  topBtn.addEventListener("click", topFunction);
+</script>

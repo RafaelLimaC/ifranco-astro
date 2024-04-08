@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="881" viewBox="0 0 1920 881">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_88" data-name="Rectangle 88" width="1920" height="880" transform="translate(-136 4134)" fill="#e84e1b"/>
+    </clipPath>
+  </defs>
+  <g id="Contato_BG" transform="translate(0 -4990)">
+    <g id="Group_139" data-name="Group 139" transform="translate(0 1007)">
+      <rect id="Rectangle_71" data-name="Rectangle 71" width="1920" height="881" transform="translate(0 3983)" fill="#e84e1b"/>
+      <g id="Mask_Group_6" data-name="Mask Group 6" transform="translate(136 -151)" clip-path="url(#clip-path)">
+        <g id="Group_68" data-name="Group 68" transform="translate(2405.554 5030.741) rotate(-180)">
+          <rect id="Rectangle_1" data-name="Rectangle 1" width="299.465" height="940.636" transform="translate(0 0.288)" fill="none" stroke="#fff" stroke-width="5"/>
+          <rect id="Rectangle_2" data-name="Rectangle 2" width="299.453" height="940.636" transform="translate(574.845 0.288)" fill="none" stroke="#fff" stroke-width="5"/>
+          <rect id="Rectangle_3" data-name="Rectangle 3" width="567.029" height="338.805" transform="translate(1144.525 0.288)" fill="none" stroke="#fff" stroke-width="5"/>
+          <rect id="Rectangle_4" data-name="Rectangle 4" width="567.017" height="369.445" transform="translate(1144.525 571.478)" fill="none" stroke="#fff" stroke-width="5"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_112" data-name="Group 112" transform="translate(25 868)">
+      <rect id="Rectangle_74" data-name="Rectangle 74" width="139" height="139" transform="translate(783 4352)" fill="#fff"/>
+      <path id="arrow-right-solid" d="M87.295,43.429a6.559,6.559,0,0,0,0-9.164L55.45,1.9a6.306,6.306,0,0,0-9.016,0,6.559,6.559,0,0,0,0,9.164l21,21.323H6.369a6.475,6.475,0,0,0,0,12.947H67.412L46.454,66.653a6.559,6.559,0,0,0,0,9.164,6.306,6.306,0,0,0,9.016,0L87.315,43.449Z" transform="translate(848.28 4361.653) rotate(45)" fill="#e84e1b"/>
+    </g>
+  </g>
+</svg>

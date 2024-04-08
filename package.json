@@ -12,6 +12,10 @@
   "dependencies": {
     "astro": "^4.5.16",
     "sass": "^1.74.1",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "swiper": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5"
   }
 }

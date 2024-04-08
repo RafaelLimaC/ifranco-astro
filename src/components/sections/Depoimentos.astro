@@ -1,5 +1,5 @@
 ---
-
+import "swiper/css";
 ---
 
 <section class="depoimentos">
@@ -14,8 +14,8 @@
             detalhados. Fica a minha recomendação à empresa e os meus parabéns à
             equipe pelo serviço de excelência que apresentam."
           </p>
-          <div class="swiper-slide__cliente">
-            <img src="/assets/swiper/Leticia Mendonca.png" alt="" />
+          <div class="swiper__slide-cliente">
+            <img src="/swiper/Leticia Mendonca.png" alt="" />
             <div>
               <span>Letícia Mendonça Cardoso</span>
               <span>Google Review</span>
@@ -31,8 +31,8 @@
             Recebemos muita atenção em todos os detalhes e o resultado final não
             podia ter sido melhor."
           </p>
-          <div class="swiper-slide__cliente">
-            <img src="/assets/swiper/Isabela Farha.png" alt="" />
+          <div class="swiper__slide-cliente">
+            <img src="/swiper/Isabela Farha.png" alt="" />
             <div>
               <span>Isabela Farha</span>
               <span>Risco Rabisco</span>
@@ -47,8 +47,8 @@
             “Compromisso e qualidade sempre, entregou o parecer técnico com
             rapidez e com muitos detalhes."
           </p>
-          <div class="swiper-slide__cliente">
-            <img src="/assets/swiper/Dra Ana Clara Nunes.png" alt="" />
+          <div class="swiper__slide-cliente">
+            <img src="/swiper/Dra Ana Clara Nunes.png" alt="" />
             <div>
               <span>Dra. Ana Clara Nunes</span>
               <span>Advogada</span>
@@ -63,8 +63,8 @@
             “Excelente. Profissionais comprometidas, capacitadas e atenciosas.
             Indico sem a menor dúvida."
           </p>
-          <div class="swiper-slide__cliente">
-            <img src="/assets/swiper/Flavia Alo.png" alt="" />
+          <div class="swiper__slide-cliente">
+            <img src="/swiper/Flavia Alo.png" alt="" />
             <div>
               <span>Flávia Aló</span>
               <span>Google Review</span>
@@ -78,13 +78,26 @@
 </section>
 
 <style lang="scss">
+  :root {
+    --swiper-pagination-color: var(--neutral-color-100);
+    --swiper-pagination-bullet-size: 15px;
+    --swiper-pagination-bullet-width: 15px;
+    --swiper-pagination-bullet-height: 15px;
+    --swiper-pagination-bullet-horizontal-gap: 5px;
+    --swiper-pagination-bullet-inactive-color: #ffffff;
+    --swiper-pagination-bullet-inactive-opacity: 0.4;
+  }
   .depoimentos {
-    margin-left: -1rem;
     margin-top: -2rem;
   }
 
   .swiper {
-    width: calc(100% + 1rem);
+    width: 100%;
+
+    .swiper-pagination {
+      height: fit-content;
+      background-color: red;
+    }
   }
 
   .swiper-wrapper {
@@ -106,7 +119,7 @@
       gap: 2.25rem;
 
       h4 {
-        font-size: var(--fs-mm);
+        font-size: 1.7rem;
         padding: 0.7em 1.2em;
         background-color: var(--primary-color-400);
         width: fit-content;
@@ -115,12 +128,12 @@
       }
 
       p {
-        font-size: clamp(1rem, 2vw, var(--fs-xl));
+        font-size: clamp(1rem, 2vw, 3.5rem);
         color: var(--neutral-color-900);
         font-weight: 500;
       }
 
-      .swiper-slide__cliente {
+      .swiper__slide-cliente {
         display: flex;
         gap: 1.5rem;
 
@@ -131,7 +144,7 @@
 
         div {
           color: var(--neutral-color-700);
-          font-size: var(--fs-mm);
+          font-size: 1.7rem;
 
           display: flex;
           flex-direction: column;
@@ -144,4 +157,122 @@
       }
     }
   }
+
+  @media only screen and (max-width: 1249px) {
+    .swiper-slide {
+      padding: 2.75rem;
+
+      .swiper-content {
+        gap: 1.5rem;
+
+        h4 {
+          font-size: 1.375rem;
+        }
+
+        .swiper__slide-cliente {
+          img {
+            height: 60px;
+            width: 60px;
+          }
+
+          div {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    :root {
+      --swiper-pagination-bullet-size: 10px;
+      --swiper-pagination-bullet-width: 10px;
+      --swiper-pagination-bullet-height: 10px;
+      --swiper-pagination-bullet-horizontal-gap: 5px;
+    }
+
+    .swiper-slide {
+      padding: 1.75rem;
+
+      .swiper-content {
+        gap: 1.25rem;
+
+        h4 {
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .swiper-slide {
+      padding: 1.5rem;
+
+      .swiper-content {
+        gap: 1.25rem;
+
+        h4 {
+          font-size: 1rem;
+        }
+
+        .swiper__slide-cliente {
+          img {
+            height: 50px;
+            width: 50px;
+          }
+
+          div {
+            font-size: 0.875rem;
+          }
+        }
+      }
+    }
+  }
 </style>
+
+<script>
+  import Swiper from "../../../node_modules/swiper/swiper-bundle.min.mjs";
+
+  const not_active_slide_scale_value = 0.75;
+  const not_active_slide_opacity_value = 0.6;
+
+  const swiper = new Swiper(".swiper", {
+    direction: "horizontal",
+    loop: true,
+    slidesPerView: 1.1,
+    effect: "creative",
+    creativeEffect: {
+      limitProgress: 2, // slides after 2nd before/after active will have same state
+      prev: {
+        opacity: not_active_slide_opacity_value,
+        scale: not_active_slide_scale_value,
+        translate: ["-100%", 0, 0],
+      },
+      next: {
+        opacity: not_active_slide_opacity_value,
+        scale: not_active_slide_scale_value,
+        translate: ["100%", 0, 0],
+      },
+    },
+    spaceBetween: 0,
+    breakpoints: {
+      "600": {
+        slidesPerView: 1.3,
+        spaceBetween: 0,
+      },
+      "901": {
+        slidesPerView: 1.4,
+        spaceBetween: 50,
+      },
+      "1200": {
+        slidesPerView: 1.75,
+        spaceBetween: 100,
+      },
+    },
+    centeredSlides: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
