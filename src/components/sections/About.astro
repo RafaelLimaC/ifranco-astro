@@ -1,0 +1,195 @@
+---
+
+---
+
+<section class="about" id="sobre">
+  <div class="about__container">
+    <div class="about__description" data-aos="fade-right">
+      <h2>Sobre nós</h2>
+      <p id="aboutText">
+        Somos especializados em <strong>diagnosticar</strong> e <strong
+          >resolver</strong
+        > problemas em edificações por meio de ensaios não destrutivos.
+      </p>
+      <button class="about__button">Peça um orçamento</button>
+    </div>
+    <div class="about__count" id="contador" data-aos="fade-left">
+      <span id="increase-value">100+</span>
+      <p>Vistorias Técnicas</p>
+      <button class="about__button">Peça um orçamento</button>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .about {
+    max-width: 1640px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .about__container {
+    padding: 10rem 1rem 6.5rem 1rem;
+    overflow: hidden;
+
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1.8fr 1.2fr;
+    grid-auto-flow: column;
+
+    font-family: var(--ff-space-grotesk);
+
+    .about__button {
+      position: relative;
+      padding: 0.25em 1em 0.25em 0;
+      width: fit-content;
+      font-size: 2rem;
+      color: var(--neutral-color-700);
+      text-transform: uppercase;
+      font-family: var(--ff-space-grotesk);
+
+      background: none;
+
+      border: none;
+      cursor: pointer;
+
+      transition: padding 0.25s;
+
+      &::after {
+        content: "";
+        -webkit-mask: url(/icons/icon_arrow-right-solid.svg);
+        display: inline-block;
+        width: 22.14px;
+        height: 19.29px;
+        background: var(--neutral-color-700);
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+      }
+
+      &:hover {
+        padding: 0.25em 1.5em 0.25em 0;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+      }
+    }
+
+    div {
+      padding: 4rem;
+      border-radius: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about__description {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(25px) brightness(1.15);
+      -webkit-backdrop-filter: blur(25px);
+      position: relative;
+      gap: 2.25rem;
+
+      h2 {
+        font-size: 1.7rem;
+        padding: 0.7em 1.2em;
+        background-color: var(--primary-color-400);
+        width: fit-content;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      p {
+        font-size: clamp(1.875rem, 5vw, 3rem);
+        color: var(--neutral-color-900);
+        font-weight: 500;
+        margin-bottom: 1.25rem;
+        letter-spacing: 0.015rem;
+        transition: opacity 0.5s ease-in-out;
+      }
+    }
+
+    .about__count {
+      background-color: var(--primary-color-400);
+      gap: 1.25rem;
+      color: #fff;
+
+      span {
+        font-size: 11rem;
+        font-weight: 700;
+        line-height: 0.7;
+        padding-top: 2rem;
+        min-width: 4ch;
+      }
+
+      p {
+        font-size: 3.5rem;
+        max-width: 10ch;
+      }
+
+      .about__button {
+        color: var(--neutral-color-100);
+
+        &::after {
+          background: var(--neutral-color-100);
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+  window.addEventListener("load", function () {
+    const aboutDiv = document.getElementById("aboutText");
+    const textOptions = [
+      "Somos especializados em <strong>diagnosticar</strong> e <strong>resolver</strong> problemas em edificações por meio de ensaios não destrutivos.",
+      "Nós fornecemos <strong>laudos técnicos</strong> concisos para ajudar os clientes em conflitos e problemas diversos na construção civil.",
+    ];
+    let indice = 0;
+
+    setInterval(function () {
+      aboutDiv.style.opacity = "0";
+      setTimeout(function () {
+        aboutDiv.style.opacity = "1";
+        indice = (indice + 1) % textOptions.length;
+        aboutDiv.innerHTML = textOptions[indice];
+      }, 500); // Espera 500ms para alterar o texto depois de desvanecer
+    }, 7000); // 15 segundos
+  });
+
+  function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerHTML = `${Math.floor(progress * (end - start) + start)}+`;
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  let alreadyCalled = false;
+  const obj = document.getElementById("increase-value");
+  const contadorDiv = document.getElementById("contador");
+
+  window.addEventListener("scroll", () => {
+    if (!alreadyCalled && isElementInViewport(contadorDiv)) {
+      animateValue(obj, 100, 300, 2000);
+      alreadyCalled = true;
+    }
+  });
+</script>

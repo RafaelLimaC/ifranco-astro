@@ -1,0 +1,147 @@
+---
+
+---
+
+<section class="depoimentos">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="swiper-content">
+          <h4>Clientes</h4>
+          <p>
+            “Profissionais competentes e extremamente cuidadosos em cada passo
+            do processo, passando segurança ao cliente com laudos bem
+            detalhados. Fica a minha recomendação à empresa e os meus parabéns à
+            equipe pelo serviço de excelência que apresentam."
+          </p>
+          <div class="swiper-slide__cliente">
+            <img src="/assets/swiper/Leticia Mendonca.png" alt="" />
+            <div>
+              <span>Letícia Mendonça Cardoso</span>
+              <span>Google Review</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-content">
+          <h4>Clientes</h4>
+          <p>
+            “Ficamos muito satisfeitos com o trabalho realizado pela empresa.
+            Recebemos muita atenção em todos os detalhes e o resultado final não
+            podia ter sido melhor."
+          </p>
+          <div class="swiper-slide__cliente">
+            <img src="/assets/swiper/Isabela Farha.png" alt="" />
+            <div>
+              <span>Isabela Farha</span>
+              <span>Risco Rabisco</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-content">
+          <h4>Clientes</h4>
+          <p>
+            “Compromisso e qualidade sempre, entregou o parecer técnico com
+            rapidez e com muitos detalhes."
+          </p>
+          <div class="swiper-slide__cliente">
+            <img src="/assets/swiper/Dra Ana Clara Nunes.png" alt="" />
+            <div>
+              <span>Dra. Ana Clara Nunes</span>
+              <span>Advogada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-content">
+          <h4>Clientes</h4>
+          <p>
+            “Excelente. Profissionais comprometidas, capacitadas e atenciosas.
+            Indico sem a menor dúvida."
+          </p>
+          <div class="swiper-slide__cliente">
+            <img src="/assets/swiper/Flavia Alo.png" alt="" />
+            <div>
+              <span>Flávia Aló</span>
+              <span>Google Review</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<style lang="scss">
+  .depoimentos {
+    margin-left: -1rem;
+    margin-top: -2rem;
+  }
+
+  .swiper {
+    width: calc(100% + 1rem);
+  }
+
+  .swiper-wrapper {
+    padding-bottom: 3rem;
+  }
+
+  .swiper-slide {
+    background-color: #fff;
+    border-radius: 2rem;
+    padding: 4rem;
+    font-family: var(--ff-space-grotesk);
+    height: fit-content;
+    letter-spacing: 0.001em;
+    cursor: grab;
+
+    .swiper-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2.25rem;
+
+      h4 {
+        font-size: var(--fs-mm);
+        padding: 0.7em 1.2em;
+        background-color: var(--primary-color-400);
+        width: fit-content;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: clamp(1rem, 2vw, var(--fs-xl));
+        color: var(--neutral-color-900);
+        font-weight: 500;
+      }
+
+      .swiper-slide__cliente {
+        display: flex;
+        gap: 1.5rem;
+
+        img {
+          height: 70px;
+          width: 70px;
+        }
+
+        div {
+          color: var(--neutral-color-700);
+          font-size: var(--fs-mm);
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          span:last-child {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+</style>

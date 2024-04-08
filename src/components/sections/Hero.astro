@@ -1,0 +1,93 @@
+---
+import ButtonCTA from "../ButtonCTA.astro";
+---
+
+<section class="hero">
+  <div class="hero__container">
+    <h1>
+      Engenharia civil amplamente especializada em
+      <strong>laudos, perícias e diagnósticos</strong>
+    </h1>
+    <div class="hero__button">
+      <ButtonCTA />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .hero {
+    max-width: 1640px;
+    margin: 0 auto;
+
+    &__container {
+      padding: 0 1rem;
+      font-family: var(--ff-space-grotesk);
+      font-weight: 300;
+
+      h1 {
+        font-size: 7rem;
+        font-weight: 300;
+        padding: 2rem 0;
+        color: var(--neutral-color-100);
+        line-height: 1.15;
+        letter-spacing: 0.02em;
+
+        strong {
+          font-weight: 500;
+        }
+      }
+
+      .hero__button {
+        margin: 4rem 0;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1700px) {
+    .hero {
+      &__container {
+        h1 {
+          font-size: 6rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1500px) {
+    .hero {
+      &__container {
+        h1 {
+          font-size: 5rem;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1249px) {
+    .hero {
+      &__container {
+        h1 {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .hero {
+      &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+          padding: 3rem 0;
+          font-size: 3rem;
+          text-align: center;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+</style>

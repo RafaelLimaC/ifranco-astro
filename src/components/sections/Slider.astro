@@ -1,0 +1,113 @@
+---
+
+---
+
+<section class="slider" id="clientes">
+  <div class="slider__wrapper">
+    <div class="slider__container">
+      <div class="slider__card">
+        <svg>
+          <use xlink:href="/slider/unimed.svg#unimed"></use>
+        </svg>
+      </div>
+      <div class="slider__card">
+        <svg>
+          <use xlink:href="/slider/ingredion.svg#ingredion"></use>
+        </svg>
+      </div>
+      <div class="slider__card">
+        <svg>
+          <use xlink:href="/slider/montaforte.svg#montaforte"></use>
+        </svg>
+      </div>
+      <div class="slider__card">
+        <svg>
+          <use xlink:href="/slider/ambar.svg#ambar"></use>
+        </svg>
+      </div>
+      <div class="slider__card">
+        <svg>
+          <use xlink:href="/slider/unimed.svg#unimed"></use>
+        </svg>
+      </div>
+      <div class="slider__card">
+        <svg>
+          <use xlink:href="/slider/ingredion.svg#ingredion"></use>
+        </svg>
+      </div>
+      <div class="slider__card">
+        <svg>
+          <use xlink:href="/slider/montaforte.svg#montaforte"></use>
+        </svg>
+      </div>
+      <div class="slider__card">
+        <svg>
+          <use xlink:href="/slider/ambar.svg#ambar"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .slider {
+    background-color: var(--primary-color-400);
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    overflow: hidden;
+    position: relative;
+    margin-top: -4rem;
+  }
+
+  .slider__wrapper {
+    display: flex;
+    animation: slider 60s infinite linear;
+    padding: 7rem 0;
+
+    .slider__container {
+      display: grid;
+      grid-template-columns: repeat(8, 500px);
+      align-items: center;
+      width: calc(500px * 4);
+    }
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  @keyframes slider {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-500px * 8));
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .slider__wrapper {
+      padding: 4rem 0;
+
+      .slider__card {
+        svg {
+          max-height: 100px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .slider__wrapper {
+      animation: slider 20s infinite linear;
+    }
+  }
+</style>
+
+<script>
+  const copyMarcas = document
+    .querySelector(".slider__container")
+    .cloneNode(true);
+  document.querySelector(".slider__wrapper").appendChild(copyMarcas);
+</script>

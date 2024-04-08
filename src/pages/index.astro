@@ -1,0 +1,54 @@
+---
+import Header from "../components/Header.astro";
+import About from "../components/sections/About.astro";
+import Depoimentos from "../components/sections/Depoimentos.astro";
+import Hero from "../components/sections/Hero.astro";
+import Slider from "../components/sections/Slider.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="wrapper">
+    <Header />
+    <Hero />
+    <About />
+    <div class="gradient__wrapper">
+      <div class="gradient"></div>
+      <Slider />
+      <Depoimentos />
+    </div>
+  </div>
+</Layout>
+
+<style lang="scss">
+  .wrapper {
+    background-image: url("/ifranco_BG.webp");
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .gradient__wrapper {
+    position: relative;
+
+    .gradient {
+      position: absolute;
+      width: calc(100% + 2rem);
+      height: 100%;
+      top: 0;
+      left: -1rem;
+      background: linear-gradient(
+        0deg,
+        #000000 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+
+  @media only screen and (max-width: 1249px) {
+    .gradient-wrapper {
+      margin-top: 3rem;
+    }
+  }
+</style>

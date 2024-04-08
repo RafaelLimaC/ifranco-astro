@@ -1,0 +1,17 @@
+{
+  "name": "ifranco-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.5.16",
+    "sass": "^1.74.1",
+    "scss": "^0.2.4"
+  }
+}
