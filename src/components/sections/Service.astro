@@ -149,8 +149,8 @@ import ButtonCTA from "../ButtonCTA.astro";
           <div class="card-back">
             <h5>Inspeção Predial</h5>
             <p>
-              Suporte técnico em processos judiciais relacionados à construção
-              civil.
+              Avaliação técnica do estado de conservação de um imóvel e
+              determinação da ordem de criticidade.
             </p>
           </div>
         </div>
@@ -169,10 +169,7 @@ import ButtonCTA from "../ButtonCTA.astro";
           </div>
           <div class="card-back">
             <h5>Vistoria de Entrega de Obra</h5>
-            <p>
-              Orientação especializada em questões técnicas relacionadas à
-              construção civil.
-            </p>
+            <p>Avaliação das condições do imóvel na entrega ao cliente.</p>
           </div>
         </div>
       </div>
@@ -191,8 +188,8 @@ import ButtonCTA from "../ButtonCTA.astro";
           <div class="card-back">
             <h5>Vistoria Cautelar de Vizinhança</h5>
             <p>
-              Soluções e orientações para preservar a condição e funcionalidade
-              de um edifício.
+              Análise preventiva das condições da vizinhança em relação ao
+              imóvel em obra.
             </p>
           </div>
         </div>
@@ -211,8 +208,9 @@ import ButtonCTA from "../ButtonCTA.astro";
           <div class="card-back">
             <h5>Avaliação Imobiliária</h5>
             <p>
-              Soluções e orientações para preservar a condição e funcionalidade
-              de um edifício.
+              Estimativa do valor de um imóvel com base na NBR14653, que
+              estabelece os procedimentos e critérios técnicos para a avaliação
+              de imóveis.
             </p>
           </div>
         </div>
@@ -222,425 +220,427 @@ import ButtonCTA from "../ButtonCTA.astro";
       <ButtonCTA />
     </div>
   </div>
+</section>
 
-  <style lang="scss">
-    .services {
+<style lang="scss">
+  .services {
+  }
+
+  .service-wrapper {
+    padding: 2rem 1rem 10rem 1rem;
+    max-width: 1640px;
+    margin: 2rem auto 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    font-family: var(--ff-space-grotesk);
+    color: #fff;
+
+    h4 {
+      font-size: 1.7rem;
+      padding: 0.7em 1.2em;
+      background-color: var(--primary-color-400);
+      width: fit-content;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
     }
 
-    .service-wrapper {
-      padding: 2rem 1rem 10rem 1rem;
-      max-width: 1640px;
-      margin: 8rem auto 0 auto;
-      overflow: hidden;
+    p {
+      font-size: 3.5rem;
+      max-width: 30ch;
+      text-align: center;
+      font-weight: 300;
+      margin-bottom: 4rem;
+      letter-spacing: 0.03em;
+    }
+
+    .service-buttons {
       display: flex;
-      align-items: center;
-      flex-direction: column;
-      position: relative;
-      font-family: var(--ff-space-grotesk);
-      color: #fff;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+
+      button {
+        border: 2px solid #fff;
+        cursor: pointer;
+        color: #fff;
+        font-size: 1.25rem;
+        width: 188px;
+        border-radius: 999px;
+        padding: 0.75em 0;
+        text-transform: uppercase;
+        font-family: var(--ff-space-grotesk);
+        background: none;
+
+        &.active {
+          background-color: #fff;
+          color: var(--neutral-color-900);
+        }
+      }
+    }
+
+    .service-cards {
+      display: flex;
+      margin-bottom: 7rem;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .card {
+        width: fit-content;
+        flex: 0 0 calc(25% - 1rem);
+        margin: 0 0.5rem 1rem 0.5rem;
+        display: none;
+        min-width: 360px;
+        perspective: 1000px;
+        min-height: 420px;
+
+        &:hover {
+          .card-inner {
+            .card-front {
+              background-color: var(--primary-color-400);
+
+              h5 {
+                color: #fff;
+              }
+
+              .svg {
+                background-color: #fff;
+                transition: background-color 0.5s;
+              }
+            }
+          }
+
+          .service__button {
+            padding: 0.25em 1.75em 0.25em 0;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 3px;
+            color: white;
+
+            &::after {
+              background: white;
+            }
+          }
+        }
+
+        .card-inner {
+          position: relative;
+          transition: transform 0.5s;
+          transform-style: preserve-3d;
+          height: 100%;
+          width: 100%;
+
+          .card-front,
+          .card-back {
+            position: absolute;
+            backface-visibility: hidden;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+
+            border-radius: 2rem;
+          }
+
+          .card-front {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            background-color: var(--neutral-color-300);
+            padding: 3rem 1rem 2rem 1rem;
+            transition: background-color 0.5s;
+
+            .svg {
+              padding: 1.5rem;
+              background-color: var(--neutral-color-900);
+              border-radius: 1rem;
+              width: 130px;
+              height: 130px;
+              position: relative;
+
+              svg {
+                height: 85px;
+                position: absolute;
+                left: calc(-50% - 1.2rem);
+              }
+            }
+
+            h5 {
+              font-size: clamp(2rem, 2vw, 2.5rem);
+              color: var(--neutral-color-900);
+              font-weight: 500;
+              letter-spacing: 0.01em;
+              text-align: center;
+              max-width: 13ch;
+              transition: color 0.5s;
+              line-height: 1.2;
+            }
+          }
+
+          .card-back {
+            background-color: var(--primary-color-400);
+            color: #fff;
+            transform: rotateY(180deg);
+            text-align: left;
+            padding: 3rem 2.25rem;
+
+            h5 {
+              font-size: 1.75rem;
+              margin-bottom: 1rem;
+            }
+
+            p {
+              font-family: var(--ff-open-sans);
+              font-size: clamp(1.25rem, 2vw, 1.75rem);
+              text-align: left;
+              letter-spacing: 0.01em;
+            }
+          }
+        }
+
+        &.flipped .card-inner {
+          transform: rotateY(180deg);
+        }
+
+        .service__button {
+          position: relative;
+          padding: 0.25em 1.25em 0.25em 0;
+          width: fit-content;
+          font-size: 1.7rem;
+          color: var(--neutral-color-700);
+          text-transform: uppercase;
+          font-family: var(--ff-space-grotesk);
+
+          background: none;
+
+          border: none;
+          cursor: pointer;
+
+          transition: padding 0.25s;
+
+          &::after {
+            content: "";
+            -webkit-mask: url(/icons/icon_arrow-right-solid.svg);
+            display: inline-block;
+            width: 22.14px;
+            height: 19.29px;
+            background: var(--neutral-color-700);
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+          }
+        }
+      }
+
+      .show {
+        display: flex;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .service-wrapper {
+      padding: 2rem 1rem;
 
       h4 {
-        font-size: 1.7rem;
-        padding: 0.7em 1.2em;
-        background-color: var(--primary-color-400);
-        width: fit-content;
-        font-weight: 300;
-        text-transform: uppercase;
-        margin-bottom: 2.5rem;
+        font-size: 1.375rem;
       }
 
       p {
-        font-size: 2rem;
-        max-width: 30ch;
-        text-align: center;
-        font-weight: 300;
-        margin-bottom: 4rem;
+        font-size: clamp(1.375rem, 5vw, 2rem);
       }
 
       .service-buttons {
-        display: flex;
-        gap: 1.5rem;
-        margin-bottom: 2.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
 
         button {
-          border: 2px solid #fff;
-          cursor: pointer;
-          color: #fff;
-          font-size: 1.25rem;
-          width: 188px;
-          border-radius: 999px;
-          padding: 0.75em 0;
-          text-transform: uppercase;
-          font-family: var(--ff-space-grotesk);
-          background: none;
-
-          &.active {
-            background-color: #fff;
-            color: var(--neutral-color-900);
-          }
+          width: 150px;
+          font-size: 1rem;
         }
       }
 
       .service-cards {
-        display: flex;
-        margin-bottom: 7rem;
-        flex-wrap: wrap;
-        justify-content: center;
-
         .card {
-          width: fit-content;
-          flex: 0 0 calc(25% - 1rem);
-          margin: 0 0.5rem 1rem 0.5rem;
-          display: none;
-          min-width: 360px;
-          perspective: 1000px;
-          min-height: 420px;
+          min-width: 225px;
+          min-height: 280px;
 
-          &:hover {
-            .card-inner {
-              .card-front {
-                background-color: var(--primary-color-400);
-
-                h5 {
-                  color: #fff;
-                }
-
-                .svg {
-                  background-color: #fff;
-                  transition: background-color 0.5s;
-                }
-              }
-            }
-
-            .service__button {
-              padding: 0.25em 1.75em 0.25em 0;
-              text-decoration: underline;
-              text-decoration-thickness: 2px;
-              text-underline-offset: 3px;
-              color: white;
-
-              &::after {
-                background: white;
-              }
-            }
+          .service__button {
+            display: none;
           }
 
           .card-inner {
-            position: relative;
-            transition: transform 0.5s;
-            transform-style: preserve-3d;
-            height: 100%;
-            width: 100%;
-
-            .card-front,
-            .card-back {
-              position: absolute;
-              backface-visibility: hidden;
-              width: 100%;
-              height: 100%;
-              -webkit-backface-visibility: hidden;
-
-              border-radius: 2rem;
-            }
-
             .card-front {
-              display: flex;
-              flex-direction: column;
-              gap: 2rem;
-              align-items: center;
-              background-color: var(--neutral-color-300);
-              padding: 3rem 1rem 2rem 1rem;
-              transition: background-color 0.5s;
+              padding: 2rem 1rem;
+              border-radius: 1.5rem;
+
+              h5 {
+                font-size: 1.5rem;
+              }
 
               .svg {
-                padding: 1.5rem;
-                background-color: var(--neutral-color-900);
-                border-radius: 1rem;
-                width: 130px;
-                height: 130px;
-                position: relative;
+                width: 100px;
+                height: 100px;
 
                 svg {
-                  height: 85px;
-                  position: absolute;
-                  left: calc(-50% - 1.2rem);
+                  height: 65px;
+                  left: calc(-50% - 3rem);
                 }
-              }
-
-              h5 {
-                font-size: clamp(2rem, 2vw, 2.5rem);
-                color: var(--neutral-color-900);
-                font-weight: 500;
-                letter-spacing: 0.01em;
-                text-align: center;
-                max-width: 13ch;
-                transition: color 0.5s;
               }
             }
 
             .card-back {
-              background-color: var(--primary-color-400);
-              color: #fff;
-              transform: rotateY(180deg);
-              text-align: left;
-              padding: 3rem 2.25rem;
+              padding: 1.75rem;
+              border-radius: 1.5rem;
 
               h5 {
-                font-size: 1.75rem;
-                margin-bottom: 1rem;
+                font-size: 1.25rem;
               }
 
               p {
-                font-family: var(--ff-open-sans);
-                font-size: clamp(1.25rem, 2vw, 1.75rem);
-                text-align: left;
-                letter-spacing: 0.01em;
+                font-size: 1.25rem;
               }
             }
           }
+        }
+      }
+    }
+  }
 
-          &.flipped .card-inner {
-            transform: rotateY(180deg);
-          }
+  @media only screen and (max-width: 600px) {
+    .service-wrapper {
+      .service-buttons {
+        button {
+          width: 130px;
+          font-size: 0.875rem;
+        }
+      }
+
+      .service-cards {
+        gap: 0.5rem;
+
+        .card {
+          min-width: 145px;
+          min-height: 195px;
+          margin: 0;
 
           .service__button {
-            position: relative;
-            padding: 0.25em 1.25em 0.25em 0;
-            width: fit-content;
-            font-size: 1.7rem;
-            color: var(--neutral-color-700);
-            text-transform: uppercase;
-            font-family: var(--ff-space-grotesk);
-
-            background: none;
-
-            border: none;
-            cursor: pointer;
-
-            transition: padding 0.25s;
-
-            &::after {
-              content: "";
-              -webkit-mask: url(/icons/icon_arrow-right-solid.svg);
-              display: inline-block;
-              width: 22.14px;
-              height: 19.29px;
-              background: var(--neutral-color-700);
-              position: absolute;
-              top: 50%;
-              right: 0;
-              transform: translate(0, -50%);
-            }
+            display: none;
           }
-        }
 
-        .show {
-          display: flex;
-        }
-      }
-    }
+          .card-inner {
+            .card-front {
+              padding: 1.5rem 1rem;
+              border-radius: 1rem;
+              gap: 1rem;
 
-    @media only screen and (max-width: 900px) {
-      .service-wrapper {
-        padding: 2rem 1rem;
-
-        h4 {
-          font-size: 1.375rem;
-        }
-
-        p {
-          font-size: clamp(1.375rem, 5vw, 2rem);
-        }
-
-        .service-buttons {
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 0.75rem;
-
-          button {
-            width: 150px;
-            font-size: 1rem;
-          }
-        }
-
-        .service-cards {
-          .card {
-            min-width: 225px;
-            min-height: 280px;
-
-            .service__button {
-              display: none;
-            }
-
-            .card-inner {
-              .card-front {
-                padding: 2rem 1rem;
-                border-radius: 1.5rem;
-
-                h5 {
-                  font-size: 1.5rem;
-                }
-
-                .svg {
-                  width: 100px;
-                  height: 100px;
-
-                  svg {
-                    height: 65px;
-                    left: calc(-50% - 3rem);
-                  }
-                }
+              h5 {
+                font-size: 1rem;
               }
 
-              .card-back {
-                padding: 1.75rem;
-                border-radius: 1.5rem;
+              .svg {
+                width: 75px;
+                height: 75px;
+                border-radius: 0.5rem;
 
-                h5 {
-                  font-size: 1.25rem;
+                svg {
+                  height: 45px;
+                  top: 20%;
+                  left: calc(-50% - 75px);
                 }
+              }
+            }
 
-                p {
-                  font-size: 1.25rem;
-                }
+            .card-back {
+              padding: 1rem;
+              border-radius: 1rem;
+
+              h5 {
+                font-size: 0.875rem;
+              }
+
+              p {
+                font-size: 0.75rem;
               }
             }
           }
         }
       }
     }
+  }
+</style>
 
-    @media only screen and (max-width: 600px) {
-      .service-wrapper {
-        .service-buttons {
-          button {
-            width: 130px;
-            font-size: 0.875rem;
-          }
-        }
+<script>
+  const idAll = document.getElementById("serviceAll");
+  const idDiagnosticos = document.getElementById("serviceDiagnosticos");
+  const idPericias = document.getElementById("servicePericias");
+  const idLaudos = document.getElementById("serviceLaudos");
+  idAll.addEventListener("click", () => filterSelection("all"));
+  idDiagnosticos.addEventListener("click", () =>
+    filterSelection("diagnosticos")
+  );
+  idPericias.addEventListener("click", () => filterSelection("pericias"));
+  idLaudos.addEventListener("click", () => filterSelection("laudos"));
 
-        .service-cards {
-          gap: 0.5rem;
+  filterSelection("all");
+  function filterSelection(selector) {
+    let cards, i;
+    cards = document.getElementsByClassName("card");
+    if (selector == "all") selector = "";
+    for (i = 0; i < cards.length; i++) {
+      hideCard(cards[i], "show");
+      if (cards[i].className.indexOf(selector) > -1)
+        showCards(cards[i], "show");
+    }
+  }
 
-          .card {
-            min-width: 145px;
-            min-height: 195px;
-            margin: 0;
-
-            .service__button {
-              display: none;
-            }
-
-            .card-inner {
-              .card-front {
-                padding: 1.5rem 1rem;
-                border-radius: 1rem;
-                gap: 1rem;
-
-                h5 {
-                  font-size: 1rem;
-                }
-
-                .svg {
-                  width: 75px;
-                  height: 75px;
-                  border-radius: 0.5rem;
-
-                  svg {
-                    height: 45px;
-                    top: 20%;
-                    left: calc(-50% - 75px);
-                  }
-                }
-              }
-
-              .card-back {
-                padding: 1rem;
-                border-radius: 1rem;
-
-                h5 {
-                  font-size: 0.875rem;
-                }
-
-                p {
-                  font-size: 0.75rem;
-                }
-              }
-            }
-          }
-        }
+  function showCards(element, name) {
+    let i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {
+        element.className += " " + arr2[i];
       }
     }
-  </style>
+  }
 
-  <script>
-    const idAll = document.getElementById("serviceAll");
-    const idDiagnosticos = document.getElementById("serviceDiagnosticos");
-    const idPericias = document.getElementById("servicePericias");
-    const idLaudos = document.getElementById("serviceLaudos");
-    idAll.addEventListener("click", () => filterSelection("all"));
-    idDiagnosticos.addEventListener("click", () =>
-      filterSelection("diagnosticos")
-    );
-    idPericias.addEventListener("click", () => filterSelection("pericias"));
-    idLaudos.addEventListener("click", () => filterSelection("laudos"));
-
-    filterSelection("all");
-    function filterSelection(selector) {
-      let cards, i;
-      cards = document.getElementsByClassName("card");
-      if (selector == "all") selector = "";
-      for (i = 0; i < cards.length; i++) {
-        hideCard(cards[i], "show");
-        if (cards[i].className.indexOf(selector) > -1)
-          showCards(cards[i], "show");
+  function hideCard(element, name) {
+    let i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
       }
     }
+    element.className = arr1.join(" ");
+  }
 
-    function showCards(element, name) {
-      let i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        if (arr1.indexOf(arr2[i]) == -1) {
-          element.className += " " + arr2[i];
-        }
+  const btnContainer = document.getElementsByClassName("service-buttons")[0];
+  const btns = btnContainer.querySelectorAll(".service-btn");
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const current = btnContainer.querySelector(".active");
+      // AOS.refresh();
+      if (current) {
+        current.classList.remove("active");
       }
-    }
-
-    function hideCard(element, name) {
-      let i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        while (arr1.indexOf(arr2[i]) > -1) {
-          arr1.splice(arr1.indexOf(arr2[i]), 1);
-        }
-      }
-      element.className = arr1.join(" ");
-    }
-
-    const btnContainer = document.getElementsByClassName("service-buttons")[0];
-    const btns = btnContainer.querySelectorAll(".service-btn");
-
-    btns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const current = btnContainer.querySelector(".active");
-        // AOS.refresh();
-        if (current) {
-          current.classList.remove("active");
-        }
-        btn.classList.add("active");
-      });
+      btn.classList.add("active");
     });
+  });
 
-    // flip card
-    const cards = document.getElementsByClassName("card");
+  // flip card
+  const cards = document.getElementsByClassName("card");
 
-    for (let i = 0; i < cards.length; i++) {
-      cards[i].addEventListener("click", () => {
-        cards[i].classList.toggle("flipped");
-      });
-    }
-  </script>
-</section>
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", () => {
+      cards[i].classList.toggle("flipped");
+    });
+  }
+</script>

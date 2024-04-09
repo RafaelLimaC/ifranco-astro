@@ -90,4 +90,18 @@ import ButtonCTA from "../ButtonCTA.astro";
       }
     }
   }
+
+  @media only screen and (max-width: 600px) {
+    .hero {
+      &__container {
+        h1 {
+          font-size: 2.4rem;
+        }
+
+        .hero__button {
+          margin: 2rem 0;
+        }
+      }
+    }
+  }
 </style>

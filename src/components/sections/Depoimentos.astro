@@ -89,19 +89,11 @@ import "swiper/css";
   }
   .depoimentos {
     margin-top: -2rem;
+    padding-bottom: 2rem;
   }
 
   .swiper {
     width: 100%;
-
-    .swiper-pagination {
-      height: fit-content;
-      background-color: red;
-    }
-  }
-
-  .swiper-wrapper {
-    padding-bottom: 3rem;
   }
 
   .swiper-slide {
@@ -241,6 +233,9 @@ import "swiper/css";
     loop: true,
     slidesPerView: 1.1,
     effect: "creative",
+    autoplay: {
+      delay: 5000,
+    },
     creativeEffect: {
       limitProgress: 2, // slides after 2nd before/after active will have same state
       prev: {
