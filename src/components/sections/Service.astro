@@ -575,6 +575,8 @@ import ButtonCTA from "../ButtonCTA.astro";
 </style>
 
 <script>
+  import AOS from "aos";
+
   const idAll = document.getElementById("serviceAll");
   const idDiagnosticos = document.getElementById("serviceDiagnosticos");
   const idPericias = document.getElementById("servicePericias");
@@ -627,7 +629,7 @@ import ButtonCTA from "../ButtonCTA.astro";
   btns.forEach((btn) => {
     btn.addEventListener("click", () => {
       const current = btnContainer.querySelector(".active");
-      // AOS.refresh();
+      AOS.refresh();
       if (current) {
         current.classList.remove("active");
       }
