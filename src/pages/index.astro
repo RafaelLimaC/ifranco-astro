@@ -111,7 +111,21 @@ import Layout from "../layouts/Layout.astro";
 
   @media only screen and (max-width: 900px) {
     .float__icons {
-      display: none;
+      .float__icons-content {
+        button:first-child {
+          display: none;
+        }
+
+        button:last-child {
+          height: 4rem;
+          width: 4rem;
+          img {
+            width: 55px;
+            height: 55px;
+            padding: 0.5rem;
+          }
+        }
+      }
     }
   }
 </style>
