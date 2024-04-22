@@ -6,7 +6,7 @@ import ButtonCTA from "../ButtonCTA.astro";
   <div class="hero__container">
     <h1 data-aos="fade-up">
       Engenharia civil amplamente especializada em
-      <strong>laudos, perícias e diagnósticos</strong>
+      <strong id="typing"></strong>
     </h1>
     <div class="hero__button" data-aos="fade-right">
       <ButtonCTA />
@@ -25,7 +25,7 @@ import ButtonCTA from "../ButtonCTA.astro";
       font-weight: 300;
 
       h1 {
-        font-size: 7rem;
+        font-size: 6rem;
         font-weight: 300;
         padding: 2rem 0;
         color: var(--neutral-color-100);
@@ -47,7 +47,7 @@ import ButtonCTA from "../ButtonCTA.astro";
     .hero {
       &__container {
         h1 {
-          font-size: 6rem;
+          font-size: 5.5rem;
         }
       }
     }
@@ -57,7 +57,7 @@ import ButtonCTA from "../ButtonCTA.astro";
     .hero {
       &__container {
         h1 {
-          font-size: 5rem;
+          font-size: 4.5rem;
           line-height: 1.4;
         }
       }
@@ -69,6 +69,16 @@ import ButtonCTA from "../ButtonCTA.astro";
       &__container {
         h1 {
           font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .hero {
+      &__container {
+        h1 {
+          font-size: 3.3rem;
         }
       }
     }
@@ -104,4 +114,53 @@ import ButtonCTA from "../ButtonCTA.astro";
       }
     }
   }
+
+  @media only screen and (max-width: 400px) {
+    .hero {
+      &__container {
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
 </style>
+<script>
+  var i = 0;
+  var texts = ["laudos", "perícias", "diagnósticos"];
+  var speed = 50;
+
+  function typeWriter() {
+    if (i >= texts.length) {
+      i = 0; // Reinicia o índice quando todas as strings forem exibidas
+    }
+    var currentText = texts[i];
+
+    var j = 0;
+    function addChar() {
+      if (j < currentText.length) {
+        document.getElementById("typing").innerHTML += currentText.charAt(j);
+        j++;
+        setTimeout(addChar, speed);
+      } else {
+        setTimeout(eraseText, 2000); // Espera 2 segundo antes de apagar o texto
+      }
+    }
+
+    function eraseText() {
+      var str = document.getElementById("typing").innerHTML;
+      str = str.slice(0, -1);
+      document.getElementById("typing").innerHTML = str;
+      if (str.length > 0) {
+        setTimeout(eraseText, speed);
+      } else {
+        i++;
+        setTimeout(typeWriter, 400); // Espera 0.4 segundo antes de começar a próxima string
+      }
+    }
+
+    addChar();
+  }
+
+  window.addEventListener("load", typeWriter);
+</script>

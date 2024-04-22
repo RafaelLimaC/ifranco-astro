@@ -12,12 +12,16 @@
         > e <strong style="font-weight: bold;">resolver</strong> problemas em edificações
         por meio de ensaios não destrutivos.
       </p>
-      <button class="about__button">Peça um orçamento</button>
+      <button class="about__button"
+        ><a href="#contact">Peça um orçamento</a></button
+      >
     </div>
     <div class="about__count" id="contador" data-aos="fade-left">
       <span id="increase-value">100+</span>
       <p>Vistorias Técnicas</p>
-      <button class="about__button">Peça um orçamento</button>
+      <button class="about__button"
+        ><a href="#contact">Peça um orçamento</a></button
+      >
     </div>
   </div>
 </section>
@@ -45,7 +49,6 @@
       padding: 0.25em 1em 0.25em 0;
       width: fit-content;
       font-size: 2rem;
-      color: var(--neutral-color-700);
       text-transform: uppercase;
       font-family: var(--ff-space-grotesk);
 
@@ -56,6 +59,10 @@
 
       transition: padding 0.25s;
 
+      a {
+        text-decoration: none;
+        color: var(--neutral-color-700);
+      }
       &::after {
         content: "";
         -webkit-mask: url(/icons/icon_arrow-right-solid.svg);
@@ -74,6 +81,7 @@
         text-decoration: underline;
         text-decoration-thickness: 2px;
         text-underline-offset: 3px;
+        color: var(--neutral-color-700);
       }
     }
 
@@ -135,10 +143,16 @@
       }
 
       .about__button {
-        color: var(--neutral-color-100);
+        a {
+          color: var(--neutral-color-100);
+        }
 
         &::after {
           background: var(--neutral-color-100);
+        }
+
+        &:hover {
+          color: var(--neutral-color-100);
         }
       }
     }

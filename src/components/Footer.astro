@@ -7,22 +7,22 @@
     <div class="contact-wrapper" id="contact">
       <div class="contact-info" data-aos="fade-right">
         <h4>Entre em contato</h4>
-        <div class="contact-info__email">
+        <div class="contact-info__email contact-info__item">
           <img src="/icons/icon_message.svg" alt="" /><span
             >contato@ifrancoengenharia.com.br</span
           >
         </div>
-        <div>
+        <div class="contact-info__item">
           <img src="/icons/icon_phone.svg" alt="" /><span
             >(22) 99922 6307 | Isabela Franco</span
           >
         </div>
-        <div>
+        <div class="contact-info__item">
           <img src="/icons/icon_phone.svg" alt="" /><span
             >(22) 99873 6275 | Mariane Riedmann</span
           >
         </div>
-        <div>
+        <div class="contact-info__item">
           <img src="/icons/icon_location.svg" alt="" /><span class="endereco"
             >R. Franklin Delano Roosevelt, 87, sala 2 Cavaleiros, Macaé, RJ</span
           >
@@ -319,13 +319,21 @@
       .contact-wrapper {
         .contact-info {
           align-items: center;
+          margin: 0;
 
           h4 {
             font-size: 4rem;
           }
 
-          .contact-info__email {
-            display: none;
+          .contact-info__item {
+            img {
+              display: none;
+            }
+
+            span {
+              font-size: 1rem;
+              text-align: center;
+            }
           }
         }
 
